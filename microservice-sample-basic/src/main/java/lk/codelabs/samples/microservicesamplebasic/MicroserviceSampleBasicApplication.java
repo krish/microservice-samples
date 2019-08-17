@@ -1,18 +1,13 @@
-package com.krishantha.sample.microservice;
+package lk.codelabs.samples.microservicesamplebasic;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.RestController;
-
-
-
 
 @SpringBootApplication
-public class Application {
-
+public class MicroserviceSampleBasicApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(Application.class,args);
+        SpringApplication.run(MicroserviceSampleBasicApplication.class, args);
     }
 
 }

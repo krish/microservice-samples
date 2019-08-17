@@ -1,8 +1,4 @@
-package com.krishantha.sample.microservice.model;
-
-import jdk.nashorn.internal.objects.annotations.Getter;
-import jdk.nashorn.internal.objects.annotations.Setter;
-import lombok.Data;
+package lk.codelabs.samples.microservicesamplebasic.model;
 
 public class Response {
 

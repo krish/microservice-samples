@@ -1,8 +1,8 @@
-package com.krishantha.sample.microservice.controller;
+package lk.codelabs.samples.microservicesamplebasic.controller;
 
 
-import com.krishantha.sample.microservice.model.Response;
-import org.springframework.http.ResponseEntity;
+
+import lk.codelabs.samples.microservicesamplebasic.model.Response;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
