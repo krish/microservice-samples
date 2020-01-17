@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  * @author Krishantha Dinesh
@@ -21,18 +22,39 @@ public class MapiisServiceImpl {
     @Autowired
     MapiisRepisitory repisitory;
 
-    public List<MapiisQuestionnaire> findall(){
-        List<MapiisQuestionnaire> questionnaires= repisitory.findAll();
+    public MapiisQuestionnaire findall(){
+        Optional<MapiisQuestionnaire> mapiisQuestionnaire = repisitory.findById(12345678);
 
 
-        for(MapiisQuestionnaire questionnaire: questionnaires ){
+      if(mapiisQuestionnaire.isPresent()){
+          String [] values=mapiisQuestionnaire.get().getData().split("\\n");
 
-            String [] values=questionnaire.getData().split("\\n");
-            System.out.println("numer of items :"+values.length);
-        }
+          for (String s:values){
+              System.out.println(s);
+              if (s.substring(0,1).equals("7")){
+
+                 try {
+                     System.out.println("HL8---------------------------");
+                     System.out.println(s.substring(1,1+15).trim());
+                     System.out.println(s.substring(16,16+12).trim());
+                     System.out.println(s.substring(28,28+25).trim());
+                     System.out.println(s.substring(53,53+1).trim());
+                     System.out.println("---------------------------");
+                 }catch (IndexOutOfBoundsException ie){
+                     continue;
+                 }
 
 
-        return questionnaires;
+              }
+          }
+
+      }
+
+
+
+
+
+        return mapiisQuestionnaire.get();
     }
 
 }

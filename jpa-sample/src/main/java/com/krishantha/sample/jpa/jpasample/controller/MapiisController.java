@@ -24,7 +24,7 @@ public class MapiisController {
 
 
     @RequestMapping("/get")
-    public List<MapiisQuestionnaire> findAll(){
+    public MapiisQuestionnaire findAll(){
        return mapiisService.findall();
     }
 
